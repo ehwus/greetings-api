@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 
+const port = process.env.PORT || 3000;
+
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
@@ -20,7 +22,6 @@ app.get("/api/greetings", (req, res) => {
     });
 });
 
-const port = 3000;
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });
